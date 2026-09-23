@@ -154,6 +154,29 @@ namespace oop_1
             Console.WriteLine("ALL INITIAL SHIPMENTS:");
             center.PrintAllShipments();
             #endregion
+
+            #region question 5.9
+            Console.WriteLine("SEARCHING FOR SHIPMENT '2' VIA INDEXER:");
+            Shipment found = center["2"];
+            if (found != null)
+            {
+                Console.WriteLine("Shipment Found Successfully!");
+                found.PrintShipment();
+            }
+            else
+            {
+                Console.WriteLine("Shipment not found.");
+            }
+            #endregion
+
+            #region question 5.10
+            Console.WriteLine("REMOVING SHIPMENT '1':");
+            bool isRemoved = center.RemoveShipment("1");
+            Console.WriteLine(isRemoved ? "1 removed successfully." : "Failed to remove 1");
+
+            Console.WriteLine("REMAINING SHIPMENTS AFTER REMOVAL:");
+            center.PrintAllShipments();
+            #endregion
         }
     }
 }
