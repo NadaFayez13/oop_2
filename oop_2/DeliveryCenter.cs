@@ -4,13 +4,31 @@ namespace oop_2
 {
     public class DeliveryCenter
     {
-        private Shipment[] shipments;
-        private int count;
+        private Shipment[] shipments = new Shipment[20];
+        private int count = 0;
 
         public DeliveryCenter()
         {
             shipments = new Shipment[10];
             count = 0;
+        }
+
+        private string centerName;
+
+        public string CenterName
+        {
+            get { return centerName; }
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    centerName = value;
+                }
+            }
+        }
+        public DeliveryCenter(string centerName)
+        {
+            CenterName = centerName;
         }
         public Shipment this[int index]
         {
@@ -52,10 +70,10 @@ namespace oop_2
         {
             if (shipments == null)
             {
-                shipments = new Shipment[10];
+                shipments = new Shipment[20];
             }
 
-            if (count < 10)
+            if (count < 20)
             {
                 shipments[count] = shipment;
                 count++;
@@ -64,6 +82,43 @@ namespace oop_2
             return false;
         }
 
+        public bool RemoveShipment(string trackingCode)
+        {
+            if (string.IsNullOrWhiteSpace(trackingCode))
+            {
+                return false;
+            }
+
+            for (int i = 0; i < count; i++)
+            {
+                if (shipments[i].TrackingCode.Equals(trackingCode, StringComparison.OrdinalIgnoreCase))
+                {
+                    for (int j = i; j < count - 1; j++)
+                    {
+                        shipments[j] = shipments[j + 1];
+                    }
+                    shipments[count - 1] = null;
+                    count--;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void PrintAllShipments()
+        {
+            Console.WriteLine($"All Shipments in {CenterName}");
+            if (count == 0)
+            {
+                Console.WriteLine("No shipments available.");
+                return;
+            }
+
+            for (int i = 0; i < count; i++)
+            {
+                shipments[i].PrintShipment();
+            }
+        }
         public int Count
         {
             get { return count; }
