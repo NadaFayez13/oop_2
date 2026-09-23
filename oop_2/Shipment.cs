@@ -75,7 +75,7 @@ namespace oop_2
         }
 
         public DeliveryAddress Destination { get; set; }
-        public decimal EstimatedCost
+        public virtual decimal EstimatedCost
         {
             get
             {
@@ -90,7 +90,7 @@ namespace oop_2
             }
         }
 
-        public void PrintShipment()
+        public virtual void PrintShipment()
         {
             Console.WriteLine($"tracking code:  {TrackingCode}");
             Console.WriteLine($"description:  {Description}");
