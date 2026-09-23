@@ -1,4 +1,5 @@
-﻿using System;
+﻿using oop_2;
+using System;
 
 namespace oop_1
 {
@@ -108,7 +109,7 @@ namespace oop_1
             #endregion
 
             #region assignment 2 - theoretical Question 2
-           
+
             //a) Which class is the parent class?
             // Shipment 
             //b) Which class is the child class?
@@ -121,6 +122,26 @@ namespace oop_1
 
             #endregion
 
+            #region question 5.1,2
+            //create DeliveryCenter and read center name from user
+            Console.Write("Enter Delivery Center Name: ");
+            string centerName = Console.ReadLine();
+            DeliveryCenter center = new DeliveryCenter(centerName);
+            #endregion
+            #region question 5.3,4,5,6
+            // read shipment data from user and create instances
+            Console.WriteLine("Entering Standard Shipment Data");
+             DeliveryAddress addr1 = new DeliveryAddress("Alexandria", "souter Street", 12);
+            StandardShipment std = new StandardShipment("1", "Books", 2.5m, 30m, addr1);
+
+            Console.WriteLine("Entering Express Shipment Data");
+            DeliveryAddress addr2 = new DeliveryAddress("Cairo", "Tahrir St", 45);
+            ExpressShipment exp = new ExpressShipment("2", "Electronics", 1.5m, 50m, addr2, 20m);
+
+            Console.WriteLine("Entering International Shipment Data");
+            DeliveryAddress addr3 = new DeliveryAddress("sharkia", "Sheikh Zayed Rd", 101);
+            InternationalShipment intl = new InternationalShipment("3", "Gift", 3.0m, 100m, addr3, "vv", 40m);
+            #endregion
         }
     }
 }
