@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace oop_1
+namespace oop_2
 {
-    public struct Shipment
+    public class Shipment
     {
         private string trackingCode;
         private string description;
-        private double weight;
+        private decimal weight;
         private decimal deliveryFee;
 
         public string TrackingCode
@@ -25,7 +25,7 @@ namespace oop_1
         {
         }
 
-        public Shipment(string trackingCode, string description, double weight, decimal deliveryFee, DeliveryAddress destination)
+        public Shipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
         {
             this.trackingCode = "UNKNOWN";
             this.description = "Unknown";
@@ -50,7 +50,7 @@ namespace oop_1
             }
         }
 
-        public double Weight
+        public decimal Weight
         {
             get { return weight; }
             set

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace oop_1
+namespace oop_2
 {
     public class DeliveryCenter
     {
