@@ -128,6 +128,7 @@ namespace oop_1
             string centerName = Console.ReadLine();
             DeliveryCenter center = new DeliveryCenter(centerName);
             #endregion
+
             #region question 5.3,4,5,6
             // read shipment data from user and create instances
             Console.WriteLine("Entering Standard Shipment Data");
@@ -141,6 +142,12 @@ namespace oop_1
             Console.WriteLine("Entering International Shipment Data");
             DeliveryAddress addr3 = new DeliveryAddress("sharkia", "Sheikh Zayed Rd", 101);
             InternationalShipment intl = new InternationalShipment("3", "Gift", 3.0m, 100m, addr3, "vv", 40m);
+            #endregion
+
+            #region question 5.7
+            center.AddShipment(std);
+            center.AddShipment(exp);
+            center.AddShipment(intl);
             #endregion
         }
     }
