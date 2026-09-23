@@ -20,7 +20,24 @@ namespace oop_1
                 }
             }
         }
+        public Shipment(string trackingCode)
+    : this(trackingCode, "Unknown", 1, 50, new DeliveryAddress("alex", "default Street", 1))
+        {
+        }
 
+        public Shipment(string trackingCode, string description, double weight, decimal deliveryFee, DeliveryAddress destination)
+        {
+            this.trackingCode = "UNKNOWN";
+            this.description = "Unknown";
+            this.weight = 1;
+            this.deliveryFee = 50;
+            this.Destination = destination;
+
+            TrackingCode = trackingCode;
+            Description = description;
+            Weight = weight;
+            DeliveryFee = deliveryFee;
+        }
         public string Description
         {
             get { return description; }
