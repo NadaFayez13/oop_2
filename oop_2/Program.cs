@@ -107,6 +107,19 @@ namespace oop_1
 
             #endregion
 
+            #region assignment 2 - theoretical Question 2
+           
+            //a) Which class is the parent class?
+            // Shipment 
+            //b) Which class is the child class?
+            // ExpressShipment
+            // c) What members are inherited by ExpressShipment?
+            // ExpressShipment inherits the TrackingCode property from Shipment class.
+            // d) Why is inheritance better than duplicating the same code in multiple classes?
+            // inheritance allows for code reuse and promotes more organized and maintainable code structure.
+            // also it enables the child class to inherit and extend the functionality of the parent class, reducing code duplication and improving overall efficiency.
+
+            #endregion
 
         }
     }
