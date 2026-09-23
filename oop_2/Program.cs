@@ -149,6 +149,11 @@ namespace oop_1
             center.AddShipment(exp);
             center.AddShipment(intl);
             #endregion
+
+            #region question 5.8
+            Console.WriteLine("ALL INITIAL SHIPMENTS:");
+            center.PrintAllShipments();
+            #endregion
         }
     }
 }
